@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>MyILL - New User Registration</title>
+<#INCLUDE filename="include_head.html">
+
+</head>
+<body id="type-a">
+<div id="wrap">
+  <div id="header"> <span id="site-name"></span> 
+    <div id="status"><span class="subhead"></span><br />
+    </div>
+  </div>
+  <div id="content-wrap">
+    <div id="content">
+       <#STATUS> 
+      <form action="illiad.dll" method="post" name="Registration" class="f-wrap-request">
+        <input type="hidden" name="ILLiadForm" value="Registration">
+        <div class="req"><b>*</b> Indicates required field</div>
+        <fieldset>
+        <h3>New User Registration</h3>
+        <a href="CreatingYourMyILLAccount.pdf" target="_blank">Need Help? Click 
+        here.</a><br />
+        <br />
+        <label for="FirstName"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORFirstName">"><b>First Name</b></span> 
+        </span> 
+        <input id="FirstName" name="FirstName" type="text" size="40" class="f-name" tabindex="2" value="<#PARAM name="FirstName">"><br />
+        </label>
+        <label for="LastName"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORLastName">"><b>Last Name</b></span> </span> 
+        <input id="LastName" name="LastName" type="text" size="40" class="f-name" tabindex="2" value="<#PARAM name="LastName">"><br />
+        </label>
+        <label for="SSN"> <span class="field"> <span class="req">*</span> <span class="<#ERROR name="ERRORSSN">"><b>IIT 
+        ID</b></span><br />
+        <span class="note">(Use the number on the front of your ID card)</span> 
+        </span> 
+        <input id="SSN" name="SSN" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="SSN">" onChange="this.form.Organization.value=this.value;"> <br />
+        </label>
+        <!-- MAKING EMAIL HIDDEN DEFAULT NOTIFICATION METHOD -->
+        <input type="hidden" name="NotifyGroup" value="E-Mail" />
+<!--        <label for="EMailAddress"> <span class="field"> <span class="req">*</span>	
+        <span class="<#ERROR name="ERROREMailAddress">"><b>IIT E-Mail Address</b></span><br />
+        <span class="note">You MUST use your "@iit.edu" email address.</span> 
+        </span> 
+        <input id="EMailAddress" name="EMailAddress" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="EMailAddress">"><br />
+        </label>-->
+        <label for="Phone"> <span class="field"> <span class="<#ERROR name="ERRORPhone">"><b>Phone</b></span> 
+        </span> 
+        <input id="Phone" name="Phone" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="Phone">"><br />
+        </label>
+        <!-- MAKING "HOLD FOR PICKUP" HIDDEN ARTICLE DELIVERY METHOD -->
+        <input type="hidden" name="DeliveryGroup" value="Hold for Pickup" />
+        <!-- MAKING "HOLD FOR PICKUP" HIDDEN LOAN DELIVERY METHOD -->
+        <input type="hidden" name="LoanDeliveryGroup" value="Hold for Pickup" />
+        <!-- MAKING "YES" HIDDEN ARTICLE ELECTRONIC DELIVERY METHOD -->
+        <input type="hidden" name="WebDeliveryGroup" value="Yes" />
+        <!-- HIDING ADDRESS FIELDS
+					
+					<label for="Address">
+						<span class="field">
+							<span class="req">*</span>
+							<span class="<#ERROR name="ERRORAddress">"><b>Primary Address Line 1</b></span>
+						</span>
+						<input id="Address" name="Address" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="Address">"><br />						
+					</label>
+					
+					<label for="Address2">
+						<span class="field">
+							<span class="<#ERROR name="ERRORAddress2">"><b>Primary Address Line 2</b></span>
+						</span>
+						<input id="Address2" name="Address2" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="Address2">"><br />
+					</label>
+					
+					<label for="City">
+						<span class="field">
+							<span class="req">*</span>
+							<span class="<#ERROR name="ERRORCity">"><b>Primary Address City</b></span>
+						</span>
+						<input id="City" name="City" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="City">"><br />
+					</label>
+					
+					<label for="State">
+						<span class="field">
+							<span class="req">*</span>
+							<span class="<#ERROR name="ERRORState">"><b>Primary Address State</b></span>
+						</span>
+						<input id="State" name="State" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="State">"><br />
+					</label>
+					
+					<label for="Zip">
+						<span class="field">
+							<span class="req">*</span>
+							<span class="<#ERROR name="ERRORZip">"><b>Primary Address Zip</b></span>
+						</span>
+						<input id="Zip" name="Zip" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="Zip">"><br />
+					</label>
+					
+					<label for="SAddress">
+						<span class="field">
+							<span class="<#ERROR name="ERRORSAddress">"><b>Secondary Address Line 1</b></span>
+						</span>
+						<input id="SAddress" name="SAddress" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="SAddress">"><br />						
+					</label>
+					
+					<label for="SAddress2">
+						<span class="field">
+							<span class="<#ERROR name="ERRORSAddress2">"><b>Secondary Address Line 2</b></span>
+						</span>
+						<input id="SAddress2" name="SAddress2" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="SAddress2">"><br />
+					</label>
+					
+					<label for="SCity">
+						<span class="field">
+							<span class="<#ERROR name="ERRORSCity">"><b>Secondary Address City</b></span>
+						</span>
+						<input id="SCity" name="SCity" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="SCity">"><br />
+					</label>
+					
+					<label for="SState">
+						<span class="field">
+							<span class="<#ERROR name="ERRORSState">"><b>Secondary Address State</b></span>
+						</span>
+						<input id="SState" name="SState" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="SState">"><br />
+					</label>
+					
+					<label for="SZip">
+						<span class="field">
+							<span class="<#ERROR name="ERRORSZip">"><b>Secondary Address Zip</b></span>
+						</span>
+						<input id="SZip" name="SZip" type="text" size="40" class="f-name" tabindex="3" value="<#PARAM name="SZip">"><br />
+					</label> -->
+        <label for="StatusGroup"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORStatus">"><b>Status</b></span> </span> 
+        <select id="StatusGroup" name="StatusGroup" size="1" class="f-name" tabindex="4">
+          <option selected><#PARAM name="StatusGroup"></option>
+          <option>Undergraduate</option>
+          <option>Graduate</option>
+          <option>Faculty</option>
+          <option>Staff</option>
+          <option>IITRI</option>
+          <option>Alumni</option>
+          <option>Research Associate</option>
+          <option>Continuing Ed</option>
+          <option>Visiting Scholar</option>
+          <option>Other</option>
+        </select>
+        <br />
+        </label>
+        <label for="Department"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORDepartment">"><b>Department</b></span> 
+        </span> 
+        <select id="Department" name="Department" size="1" class="f-name" tabindex="4">
+          <option selected><#PARAM name="Department"></option>
+          <option value="AS">Air Force Aerospace Studies</option>
+          <option value="MATH">Applied Mathematics</option>
+          <option value="ARCH">Architecture</option>
+          <option value="BCHS">Biological and Chemical Sciences</option>
+          <option value="BCPS">Biological Chemical & Physical Sciences</option>
+          <option value="BIOL">Biological Sciences</option>
+          <option value="BME">Biomedical Engineering</option>
+          <option value="BADM">Business Administration</option>
+          <option value="CAEE">Civil Architectural Environmental Engineering</option>
+          <option value="CHBE">Chemical Biological Engineering</option>
+          <option value="CHEM">Chemistry</option>
+          <option value="CSL">College of Science & Letters</option>
+          <option value="CS">Computer Science</option>
+          <option value="CEPD">Continuing Education Professional Development</option>
+          <option value="ECE">Electrical Computer Engineering</option>
+          <option value="FDSN">Food Science and Nutrition</option>
+          <option value="FPE">Food Process Engineering</option>
+          <option value="FST">Food Safety Technology</option>
+          <option value="HUM">Humanities</option>
+          <option value="IITRI">IITRI</option>
+          <option value="IFSH">Institute for Food Safety & Health</option>
+          <option value="ID">Institute of Design</option>
+          <option value="INTM">Industrial Technology & Management</option>
+          <option value="ITCP">Information Technology Certificate Program</option>
+          <option value="ITM">Information Technology Management</option>
+          <option value="LAW">Law</option>
+          <option value="LIB">Library</option>
+          <option value="MSED">Math & Science Education</option>
+          <option value="MMAE">Mechanical Materials & Aerospace Engineering</option>
+          <option value="MILS">Military Science</option>
+          <option value="NS">Naval Science</option>
+          <option value="PHYS">Physics</option>
+          <option value="PSYCH">Psychology</option>
+          <option value="SOCSCI">Social Sciences</option>
+          <option value="Other">Other</option>
+        </select>
+        <br />
+        </label>
+        <!-- HIDING AUTHORIZED USERS FIELD
+					<label for="AuthorizedUsers">
+						<span class="field">
+							<span class="<#ERROR name="ERRORAuthorizedUsers">"><b>Authorized Users</b></span><br />
+							<span class="note">List the full names of anyone you wish to be allowed to pick up your ILL items.<br />An ID will be REQUIRED to pick items up.</span>
+						</span>
+						<textarea id="AuthorizedUsers" name="AuthorizedUsers" rows="2" cols="40" class="f-name" tabindex="15"><#PARAM name="AuthorizedUsers"></textarea><br />
+					</label> -->
+        <!-- MAKING "ILL" HIDDEN DEFAULT DELIVERY LOCATION -->
+        <input type="hidden" name="NVTGC" value="ILL" />
+        <!-- MAKING "SSN" HIDDEN DEFAULT ORGANIZATION -->
+        <input type="hidden" name="Organization" value="" />
+        <label for="Username"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORUsername">"><b>Username</b></span><br />
+        <span class="note">Your username is the same as your IIT email account.<br />
+        <strong><font color="#B30800">Do not include "@iit.edu"</font></strong>. 
+        <br />
+        (Don't know your email username? Look it up <a href="http://myuid.iit.edu/" target="_blank">here</a>.)</span> 
+        </span> 
+        <input id="Username" name="Username" type="text" size="40" class="f-name" tabindex="3" onKeyPress="return letternumber(event)" value="<#PARAM name="Username">"><br />
+        </label>
+        <label for="Password1"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORPassword1">"><b>Password</b></span><br />
+        <span class="note">Your password is the same as your IIT email account 
+        password. <br />
+        (Don't know your email password? Contact the <a href="http://www.iit.edu/ots/" target="_blank">OTS
+        Support Desk</a>.)</span> </span> 
+        <input id="Password1" name="Password1" type="password" size="40" class="f-name" tabindex="3" value="<#PARAM name="Password1">"><br />
+        </label>
+        <label for="Password2"> <span class="field"> <span class="req">*</span> 
+        <span class="<#ERROR name="ERRORPassword2">"><b>Re-enter Password</b></span><br />
+        <span class="note"></span> </span> 
+        <input id="Password2" name="Password2" type="password" size="40" class="f-name" tabindex="3" value="<#PARAM name="Password2">"><br />
+        </label>
+        <div class="f-submit-wrap" align="right"> 
+          <input type="submit" name="SubmitButton" value="Submit Information" class="f-submit" tabindex="60" />
+          <input type="reset" name="ResetButton" value="Clear Form" class="f-submit" tabindex="61" />
+          <input type="submit" name="SubmitButton" value="Cancel" class="f-submit" tabindex="62" />
+        </div>
+        </fieldset>
+      </form>
+
+       <#INCLUDE filename="include_galvin_footer.html"> 
+      <#INCLUDE filename="include_footer.html">
+    </div>    
+  </div>
+</div>
+</body>
+</html>
