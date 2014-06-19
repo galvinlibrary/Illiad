@@ -132,17 +132,8 @@
         <label for="StatusGroup"> <span class="field"> <span class="req">*</span> 
         <span class="<#ERROR name="ERRORStatus">"><b>Status</b></span> </span> 
         <select id="StatusGroup" name="StatusGroup" size="1" class="f-name" tabindex="4">
-          <option selected><#PARAM name="StatusGroup"></option>
-          <option>Undergraduate</option>
-          <option>Graduate</option>
-          <option>Faculty</option>
-          <option>Staff</option>
-          <option>IITRI</option>
-          <option>Alumni</option>
-          <option>Research Associate</option>
-          <option>Continuing Ed</option>
-          <option>Visiting Scholar</option>
-          <option>Other</option>
+<!--          Now pulls from database. List not needed-->
+          <#OPTION name="custom" groupname="StatusGroup" selectedValue="<#PARAM name=StatusGroup>" defaultValue="" defaultName="" />
         </select>
         <br />
         </label>
@@ -150,42 +141,8 @@
         <span class="<#ERROR name="ERRORDepartment">"><b>Department</b></span> 
         </span> 
         <select id="Department" name="Department" size="1" class="f-name" tabindex="4">
-          <option selected><#PARAM name="Department"></option>
-          <option value="AS">Air Force Aerospace Studies</option>
-          <option value="MATH">Applied Mathematics</option>
-          <option value="ARCH">Architecture</option>
-          <option value="BCHS">Biological and Chemical Sciences</option>
-          <option value="BCPS">Biological Chemical & Physical Sciences</option>
-          <option value="BIOL">Biological Sciences</option>
-          <option value="BME">Biomedical Engineering</option>
-          <option value="BADM">Business Administration</option>
-          <option value="CAEE">Civil Architectural Environmental Engineering</option>
-          <option value="CHBE">Chemical Biological Engineering</option>
-          <option value="CHEM">Chemistry</option>
-          <option value="CSL">College of Science & Letters</option>
-          <option value="CS">Computer Science</option>
-          <option value="CEPD">Continuing Education Professional Development</option>
-          <option value="ECE">Electrical Computer Engineering</option>
-          <option value="FDSN">Food Science and Nutrition</option>
-          <option value="FPE">Food Process Engineering</option>
-          <option value="FST">Food Safety Technology</option>
-          <option value="HUM">Humanities</option>
-          <option value="IITRI">IITRI</option>
-          <option value="IFSH">Institute for Food Safety & Health</option>
-          <option value="ID">Institute of Design</option>
-          <option value="INTM">Industrial Technology & Management</option>
-          <option value="ITCP">Information Technology Certificate Program</option>
-          <option value="ITM">Information Technology Management</option>
-          <option value="LAW">Law</option>
-          <option value="LIB">Library</option>
-          <option value="MSED">Math & Science Education</option>
-          <option value="MMAE">Mechanical Materials & Aerospace Engineering</option>
-          <option value="MILS">Military Science</option>
-          <option value="NS">Naval Science</option>
-          <option value="PHYS">Physics</option>
-          <option value="PSYCH">Psychology</option>
-          <option value="SOCSCI">Social Sciences</option>
-          <option value="Other">Other</option>
+          <!--          Now pulls from database. List not needed-->
+	<#OPTION name="custom" groupname="Department" selectedValue="<#PARAM name=Department>" defaultValue="" defaultName=""/>
         </select>
         <br />
         </label>
