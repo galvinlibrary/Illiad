@@ -379,7 +379,7 @@ hr {margin: 1em 0;background:#f2f2f2;height:1px;color:#f2f2f2;border:none;clear:
 .default-table tfoot th, tfoot td {margin: 0;border-top: 2px solid #fff;padding: 5px 10px;text-align: left;background: #F8F12A;color: #000;}
 .default-table tfoot th {text-transform: uppercase;letter-spacing: 0.2em;border: none;}
 .default-table tfoot td {padding-left: 10px;}
-.default-table a {text-decoration:none;}
+.default-table a, .default-table a:link, .default-table a:visited {text-decoration:underline; color:#000066;}
 
 
 
